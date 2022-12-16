@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class View {
-    private final Logger log = Logger.getLogger(View.class.getName());
+public class View { // Класс вьювер - отображение на экране и взаимодействие с пользователем
+    private final Logger log = Logger.getLogger(View.class.getName());  // Логи
 
     public View() {
-        try {
+        try {  // Инициализация логгера
             LogManager.getLogManager().readConfiguration( // берем конфиг для логов
                     View.class.getResourceAsStream("../log.config"));
         } catch (IOException e) {  // печаль, беда...
@@ -16,10 +16,10 @@ public class View {
         }
     }
     public void printInfo(String string) {
-        log.info(string);
+        log.info(string);  // Выводим информацию в лог
     }
     public void printWarning(String string) {
-        log.warning(string);
+        log.warning(string);  // Выводим warning в лог
     }
 
 }
